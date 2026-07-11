@@ -18,7 +18,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public void savePatient(PatientEntity patient) {
-        throw new UnsupportedOperationException("Unimplemented method 'savePatient'");
+        patientRepository.save(patient);
     }
 
     @Override
@@ -28,17 +28,17 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public PatientEntity getPatientById(Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'getPatientById'");
+        return patientRepository.findById(id).orElse(null);
     }
 
     @Override
     public void editPatient(PatientEntity patient) {
-        throw new UnsupportedOperationException("Unimplemented method 'editPatient'");
+        this.savePatient(patient);
     }
 
     @Override
     public void deletePatientById(Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'deletePatientById'");
+        patientRepository.deleteById(id);
     }
 
 }

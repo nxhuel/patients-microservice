@@ -2,17 +2,18 @@ package com.todocode.patients.service;
 
 import java.util.List;
 
-import com.todocode.patients.persistence.entity.PatientEntity;
+import com.todocode.patients.dto.PatientRequest;
+import com.todocode.patients.dto.PatientResponse;
 
 public interface IPatientService {
-    
-    void savePatient(PatientEntity patient);
 
-    List<PatientEntity> getPatients();
+    PatientResponse savePatient(PatientRequest request);
 
-    PatientEntity getPatientById(Long id);
+    List<PatientResponse> getPatients();
 
-    void editPatient(PatientEntity patient);
-    
+    PatientResponse getPatientById(Long id);
+
+    PatientResponse editPatient(Long id, PatientRequest request);
+
     void deletePatientById(Long id);
 }

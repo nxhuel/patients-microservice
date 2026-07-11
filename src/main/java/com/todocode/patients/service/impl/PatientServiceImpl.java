@@ -2,10 +2,19 @@ package com.todocode.patients.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.todocode.patients.persistence.entity.PatientEntity;
+import com.todocode.patients.persistence.repository.IPatientRepository;
 import com.todocode.patients.service.IPatientService;
 
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class PatientServiceImpl implements IPatientService {
+
+    private final IPatientRepository patientRepository;
 
     @Override
     public void savePatient(PatientEntity patient) {
@@ -14,7 +23,7 @@ public class PatientServiceImpl implements IPatientService {
 
     @Override
     public List<PatientEntity> getPatients() {
-        throw new UnsupportedOperationException("Unimplemented method 'getPatients'");
+        return patientRepository.findAll();
     }
 
     @Override

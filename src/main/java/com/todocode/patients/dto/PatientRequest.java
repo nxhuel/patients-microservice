@@ -2,6 +2,8 @@ package com.todocode.patients.dto;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
@@ -16,9 +18,10 @@ public record PatientRequest(
     String name,
 
     @NotBlank(message = "Last name is required")
-    String lastName,
+    String lastname,
 
     @Past(message = "Date of birth must be in the past")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     LocalDate dateOfBirth,
 
     @NotBlank(message = "Phone is required")

@@ -11,7 +11,7 @@ public class PatientMapper {
         return PatientEntity.builder()
                 .dni(request.dni())
                 .name(request.name())
-                .lastName(request.lastName())
+                .lastname(request.lastname())
                 .dateOfBirth(request.dateOfBirth())
                 .phone(request.phone())
                 .build();
@@ -22,7 +22,7 @@ public class PatientMapper {
                 .idPatient(id)
                 .dni(request.dni())
                 .name(request.name())
-                .lastName(request.lastName())
+                .lastname(request.lastname())
                 .dateOfBirth(request.dateOfBirth())
                 .phone(request.phone())
                 .build();
@@ -33,7 +33,7 @@ public class PatientMapper {
                 entity.getIdPatient(),
                 entity.getDni(),
                 entity.getName(),
-                entity.getLastName(),
+                entity.getLastname(),
                 entity.getDateOfBirth(),
                 entity.getPhone());
     }

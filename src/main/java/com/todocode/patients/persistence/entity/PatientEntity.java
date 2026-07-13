@@ -2,6 +2,8 @@ package com.todocode.patients.persistence.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,7 +29,9 @@ public class PatientEntity {
     private Long idPatient;
     private String dni;
     private String name;
-    private String lastName;
+    private String lastname;
+    
     private LocalDate dateOfBirth;
+    
     private String phone;
 }

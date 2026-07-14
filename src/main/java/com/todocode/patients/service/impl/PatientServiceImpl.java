@@ -66,4 +66,10 @@ public class PatientServiceImpl implements IPatientService {
         }
         patientRepository.deleteById(id);
     }
+
+	@Override
+	public PatientResponse getPatientByDni(String dni) {
+		PatientEntity patientFound = patientRepository.findByDni(dni);
+		return patientMapper.toResponse(patientFound);
+	}
 }

@@ -8,7 +8,7 @@ public record PatientResponse(
     Long idPatient,
     String dni,
     String name,
-    String lastName,
+    String lastname,
     
     @JsonFormat(pattern = "dd-MM-yyyy")
     LocalDate dateOfBirth,

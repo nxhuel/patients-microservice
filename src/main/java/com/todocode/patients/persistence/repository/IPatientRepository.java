@@ -6,4 +6,5 @@ import com.todocode.patients.persistence.entity.PatientEntity;
 
 public interface IPatientRepository extends JpaRepository<PatientEntity, Long> {
 
+	PatientEntity findByDni(String dni);
 }

@@ -12,8 +12,10 @@ public interface IPatientService {
     List<PatientResponse> getPatients();
 
     PatientResponse getPatientById(Long id);
-
+    
     PatientResponse editPatient(Long id, PatientRequest request);
 
     void deletePatientById(Long id);
+    
+    PatientResponse getPatientByDni(String dni);
 }

@@ -38,7 +38,7 @@ public class PatientController {
         return ResponseEntity.ok(patientService.getPatients());
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/find-by-id/{id}")
     public ResponseEntity<PatientResponse> getPatient(@PathVariable Long id) {
         return ResponseEntity.ok(patientService.getPatientById(id));
     }
@@ -54,4 +54,9 @@ public class PatientController {
         patientService.deletePatientById(id);
         return ResponseEntity.noContent().build();
     }
+    
+    @GetMapping("/find-by-dni/{dni}")
+    public ResponseEntity<PatientResponse> getPatientByDni(@PathVariable String dni) {
+		return ResponseEntity.ok(patientService.getPatientByDni(dni));
+	}
 }
